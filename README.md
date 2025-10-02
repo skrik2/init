@@ -3,7 +3,7 @@
 
 ```
 # generic
-wget -qO ./script.sh https://yanghao5.github.io/init/vscode/generic.sh && \
+wget https://yanghao5.github.io/init/vscode/generic.sh -qO ./script.sh && \
 bash ./script.sh && \
 rm ./script.sh
 ```
