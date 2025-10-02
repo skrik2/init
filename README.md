@@ -15,6 +15,7 @@ rm ./script.sh
 ```
 
 # Makefile
+
 ```
 # generic
 wget https://yanghao5.github.io/init/make/generic/Makefile -qO ./Makefile
