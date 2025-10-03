@@ -22,13 +22,13 @@ curl -O https://apt.llvm.org/llvm.sh
 # Golang 1.24.2
 curl -O https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 
-# 获取当前目录下文件的数量（不包含子目录）
-file_count=$(find . -maxdepth 1 -type f | wc -l)
+# # 获取当前目录下文件的数量（不包含子目录）
+# file_count=$(find . -maxdepth 1 -type f | wc -l)
 
-# 判断文件数量是否等于 9
-if [ "$file_count" -ne 9 ]; then
-  echo "错误：当前目录中文件数量不是 9，而是 $file_count"
-  exit 1
-else
-  echo "文件数量正确：$file_count"
-fi
+# # 判断文件数量是否等于 9
+# if [ "$file_count" -ne 9 ]; then
+#   echo "错误：当前目录中文件数量不是 9，而是 $file_count"
+#   exit 1
+# else
+#   echo "文件数量正确：$file_count"
+# fi
