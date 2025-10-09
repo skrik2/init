@@ -1,14 +1,17 @@
 # Init
 ## Vscode
 
+generic
+
 ```
-# generic
 wget https://yanghao5.github.io/init/vscode/generic.sh -qO ./script.sh && \
 bash ./script.sh && \
 rm ./script.sh
+```
 
+go
 
-# go
+```
 wget https://yanghao5.github.io/init/vscode/go.sh -qO ./script.sh && \
 bash ./script.sh && \
 rm ./script.sh
@@ -16,7 +19,8 @@ rm ./script.sh
 
 # Makefile
 
+generic
+
 ```
-# generic
 wget https://yanghao5.github.io/init/make/generic/Makefile -qO ./Makefile
 ```
