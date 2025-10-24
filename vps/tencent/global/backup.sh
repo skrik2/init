@@ -9,6 +9,7 @@ cp .zsh_aliases /home/momo/backup/config/
 
 # ssh
 rsync -rv --exclude 'authorized_keys' /home/momo/.ssh /home/momo/backup/config/ 
+cp /etc/ssh/sshd_config /home/momo/backup/config/
 
 ## neovim
 rsync -rv /home/momo/.config/nvim /home/momo/backup/config/
