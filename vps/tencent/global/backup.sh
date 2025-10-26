@@ -24,4 +24,4 @@ sudo rsync -rv dev /home/momo/backup/
 
 timestamp=$(date "+%Y%m%d%H%M")
 filename="backup_${timestamp}.zip"
-zip -r ${filename} backup
+zip -r -s 256m ${filename} backup.zip
