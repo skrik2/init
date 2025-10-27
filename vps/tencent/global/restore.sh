@@ -28,4 +28,4 @@ mv .zsh_aliases /home/momo/
 ## git
 mv .gitconfig /home/momo/
 
-
+sudo systemctl restart sshd
