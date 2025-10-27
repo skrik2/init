@@ -28,3 +28,5 @@ mv backup temp && cd temp
 timestamp=$(date "+%Y%m%d%H%M")
 filename="backup_${timestamp}.zip"
 zip -s 256m -r ${filename} backup
+
+rm -rf backup
