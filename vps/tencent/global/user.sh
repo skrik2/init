@@ -90,10 +90,10 @@ chmod +x ohmyzsh_install.sh
 download_file "https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh" "nvm_install.sh"
 chmod +x nvm_install.sh
 
-
+# go 1.24.2
 download_file_hash "https://go.dev/dl/go1.24.2.linux-amd64.tar.gz" "go1.24.2.linux-amd64.tar.gz" "68097bd680839cbc9d464a0edce4f7c333975e27a90246890e9f1078c7e702ad"
 
 # =========================== Install =========================================== #
 
 # go 1.24.2
-#sudo tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz

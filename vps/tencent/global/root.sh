@@ -17,7 +17,7 @@ sysctl vm.swappiness=90
 apt-get update && apt-get install git wget curl -y
 
 # install 
-apt-get update && apt-get install sudo wget curl neovim git btop zsh rsync jq -y
+apt-get update && apt-get install sudo wget curl neovim git btop zsh rsync jq p7zip-full -y
 
 # add user momo proxy jumper
 adduser --disabled-password --gecos "" momo
