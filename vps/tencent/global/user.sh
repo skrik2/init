@@ -21,10 +21,10 @@ download_file() {
         
         # 如果下载成功且文件非空，退出循环
         if check_file; then
-            echo "file: $output download succe！"
+            echo "file: $output download success!"
             break
         else
-            echo "文件下载失败或为空，正在重新尝试..."
+            echo "faild download or file is empty, and trying download again..."
             sleep 2  # 暂停 2 秒后再试
         fi
     done
