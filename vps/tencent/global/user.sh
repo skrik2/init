@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# ========================================== download ============================================= #
+#============================== download_file() =============================================#
 download_file() {
     local url="$1"
     local output="$2"
+    local max_retries=5
+    local attempt=1
     
     # 检测文件是否存在且非空
     check_file() {
@@ -14,24 +16,28 @@ download_file() {
         fi
     }
 
-    # 尝试下载，直到文件存在且非空
-    while true; do
+    # 尝试 5 次下载
+    while [ $attempt -le $max_retries ]; do
+        echo "Attempt $attempt/$max_retries: downloading $url ..."
         # 使用 wget 下载文件
         wget -O "$output" "$url"
         
         # 如果下载成功且文件非空，退出循环
         if check_file; then
             echo "file: $output download success!"
-            break
+            return 0
         else
             echo "faild download or file is empty, and trying download again..."
             # 如果文件存在，尝试删除
             if [ -f "$output" ]; then
-                rm "$output"
+                rm -f "$output"
             fi
+            attempt=$((attempt + 1))
             sleep 2  # 暂停 2 秒后再试
         fi
     done
+    echo "ERROR: failed to download $url after $max_retries attempts."
+    return 1
 }
 
 download_file_hash() {
