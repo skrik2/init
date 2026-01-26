@@ -101,7 +101,7 @@ download_file "https://skrik2.github.io/init/vps/tencent/global/restore.sh" "res
 chmod +x restore.sh
 
 # go 1.24.2
-download_file_hash "https://go.dev/dl/go1.24.2.linux-amd64.tar.gz" "go1.24.2.linux-amd64.tar.gz" "68097bd680839cbc9d464a0edce4f7c333975e27a90246890e9f1078c7e702ad"
+download_file_hash "https://go.dev/dl/go1.25.6.linux-amd64.tar.gz" "go1.25.6.linux-amd64.tar.gz" "f022b6aad78e362bcba9b0b94d09ad58c5a70c6ba3b7582905fababf5fe0181a"
 
 # =========================== Install =========================================== #
 
