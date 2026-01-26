@@ -100,10 +100,10 @@ chmod +x nvm_install.sh
 download_file "https://skrik2.github.io/init/vps/tencent/global/restore.sh" "restore.sh"
 chmod +x restore.sh
 
-# go 1.24.2
+# go 1.25.6
 download_file_hash "https://go.dev/dl/go1.25.6.linux-amd64.tar.gz" "go1.25.6.linux-amd64.tar.gz" "f022b6aad78e362bcba9b0b94d09ad58c5a70c6ba3b7582905fababf5fe0181a"
 
 # =========================== Install =========================================== #
 
-# go 1.24.2
-sudo tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
+# go 1.25.6
+sudo tar -C /usr/local -xzf go1.25.6.linux-amd64.tar.gz
