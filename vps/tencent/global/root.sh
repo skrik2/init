@@ -32,9 +32,5 @@ echo "%sudo   ALL=(ALL:ALL) ALL" | tee -a /etc/sudoers
 echo "root:op" | chpasswd
 echo "momo:op" | chpasswd
 
-# Docker
-curl -o get-docker.sh https://get.docker.com 
-sh ./get-docker.sh
-
-## 给 momo 用户执行 docker 权限
-usermod -aG docker momo
+# podman
+apt-get -y install podman
