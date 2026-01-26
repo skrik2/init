@@ -1,13 +1,7 @@
 #!/bin/bash
 
-mkdir .ssh
-
-cd backup
-
-# apps file dev
-rsync -rv apps /home/momo/
-rsync -rv file /home/momo/
-rsync -rv dev /home/momo/
+mkdir .ssh 
+mkdir .config
 
 # config 
 cd config_file
@@ -19,13 +13,23 @@ rsync -rv .config /home/momo/
 sudo mv global.conf /etc/ssh/sshd_config.d/
 rsync -rv .ssh /home/momo/
 
+sudo systemctl restart sshd
+
 ## zsh
 mv .zshrc /home/momo/
 mv .zsh_envs /home/momo/
 mv .zsh_aliases /home/momo/
 
 
+
 ## git
 mv .gitconfig /home/momo/
 
-sudo systemctl restart sshd
+cd ~
+
+cd backup
+
+# apps file dev
+rsync -rv apps /home/momo/
+rsync -rv file /home/momo/
+rsync -rv code /home/momo/
