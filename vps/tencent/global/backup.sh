@@ -1,21 +1,26 @@
 #!/bin/bash
-mkdir -p /home/momo/backup/config_file
+mkdir -p /home/momo/backup
+mkdir -p config_file
 
 # config 
 ## zsh
-cp /home/momo/.zshrc /home/momo/backup/config_file/
-cp /home/momo/.zsh_envs /home/momo/backup/config_file/
-cp /home/momo/.zsh_aliases /home/momo/backup/config_file/
+cp /home/momo/.zshrc /home/momo/config_file/
+cp /home/momo/.zsh_envs /home/momo/config_file/
+cp /home/momo/.zsh_aliases /home/momo/config_file/
 
 # ssh
-rsync -rv /home/momo/.ssh /home/momo/backup/config_file/ 
-cp /etc/ssh/sshd_config.d/global.conf /home/momo/backup/config_file/
+rsync -rv /home/momo/.ssh /home/momo/config_file/ 
+cp /etc/ssh/sshd_config.d/global.conf /home/momo/config_file/
 
 ## neovim
-rsync -rv /home/momo/.config /home/momo/backup/config_file/
+rsync -rv /home/momo/.config /home/momo/config_file/
 
 ## git
-cp /home/momo/.gitconfig /home/momo/backup/config_file/
+cp /home/momo/.gitconfig /home/momo/config_file/
+
+timestamp=$(date "+%Y%m%d%H%M")
+config_filename="configfile_${timestamp}.zip"
+zip -r ${config_filename} /home/momo/config_file
 
 # apps file dev
 sudo rsync -rv /home/momo/apps /home/momo/backup/
