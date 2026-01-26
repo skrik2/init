@@ -34,3 +34,10 @@ echo "momo:op" | chpasswd
 
 # podman
 apt-get -y install podman
+
+# Docker
+curl -o get-docker.sh https://get.docker.com 
+sh ./get-docker.sh
+
+## 给 momo 用户执行 docker 权限
+usermod -aG docker momo
