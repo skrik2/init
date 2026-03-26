@@ -1,10 +1,19 @@
-.PHONY: clean push
-clean:
-	- rm -rf HostlistsRegistry
-	- rm -rf meta-rules-dat
-	- rm -rf anti-AD
+.PHONY: up restart down ps log clean
 
-push:
-	- git add --all
-	- git commit -m "update $(shell date +'%Y%m%d%H%M%S')"
-	- git push
+up:	
+	docker compose up -d
+
+restart:
+	docker compose restart
+
+down:
+	docker compose down
+
+ps:
+	docker compose ps
+
+log:
+	docker compose logs
+
+clean:
+	docker system prune -a --volumes -f
