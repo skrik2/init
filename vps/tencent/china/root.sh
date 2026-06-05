@@ -19,7 +19,7 @@ sysctl vm.swappiness=90
 #/usr/local/qcloud/monitor/barad/admin/uninstall.sh
 
 # install 
-apt-get update && apt-get install sudo wget curl neovim git btop zsh rsync -y
+apt-get update && apt-get install sudo wget curl neovim git btop zsh -y
 
 # add user momo proxy jumper
 adduser --disabled-password --gecos "" momo
