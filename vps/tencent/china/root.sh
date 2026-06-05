@@ -107,36 +107,3 @@ EOF
 echo "正在重载 Docker 配置并重启 Docker 服务..."
 systemctl daemon-reload
 systemctl restart docker
-
-# shell scripts
-chmod +x restore.sh user.sh
-chown momo:momo restore.sh user.sh
-mv restore.sh /home/momo
-mv user.sh /home/momo
-
-# nvm
-chown -R momo:momo nvm.git
-chmod 700 -R nvm.git
-mv  nvm.git /home/momo
-
-# oh my zsh
-chown -R momo:momo ohmyzsh.git
-chmod 700 -R ohmyzsh.git
-mv  ohmyzsh.git /home/momo
-
-chmod +x ohmyzsh_install.sh
-chown momo:momo ohmyzsh_install.sh
-mv ohmyzsh_install.sh /home/momo
-
-# Cmake
-chown momo:momo cmake-3.28.2-linux-x86_64.tar.gz
-mv cmake-3.28.2-linux-x86_64.tar.gz /home/momo
-
-# LLVM
-chown momo:momo llvm.sh
-chmod +x llvm.sh
-mv llvm.sh /home/momo
-
-# Golang
-chown momo:momo go1.24.2.linux-amd64.tar.gz
-mv go1.24.2.linux-amd64.tar.gz /home/momo
