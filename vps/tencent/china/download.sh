@@ -2,7 +2,6 @@
 REMOTE=${REMOTE:-https://gh-proxy.com/}
 
 # script
-wget ${REMOTE}https://raw.githubusercontent.com/yanghao5/vps-init/refs/heads/main/tencent/china/root.sh
 wget ${REMOTE}https://raw.githubusercontent.com/yanghao5/vps-init/refs/heads/main/tencent/china/restore.sh
 wget ${REMOTE}https://raw.githubusercontent.com/yanghao5/vps-init/refs/heads/main/tencent/china/user.sh
 
