@@ -9,7 +9,7 @@ fi
 # install 
 apt-get update && apt-get install sudo wget curl neovim git btop zsh -y
 
-# add user momo proxy jumper
+# add user
 adduser --disabled-password --gecos "" lain
 
 # root permisson
