@@ -6,32 +6,18 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-# swap mem 4G
-dd if=/dev/zero of=/swapfile bs=1G count=4
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-sysctl vm.swappiness=90
-
-# 卸载腾讯云监控
-#/usr/local/qcloud/stargate/admin/uninstall.sh
-#/usr/local/qcloud/YunJing/uninst.sh
-#/usr/local/qcloud/monitor/barad/admin/uninstall.sh
-
 # install 
 apt-get update && apt-get install sudo wget curl neovim git btop zsh -y
 
 # add user momo proxy jumper
-adduser --disabled-password --gecos "" momo
 adduser --disabled-password --gecos "" lain
-adduser --disabled-password --gecos "" jumper
+
 # root permisson
-usermod -aG sudo momo
-echo "%sudo   ALL=(ALL:ALL) ALL" |  tee -a /etc/sudoers
+usermod -aG sudo lain
 
 # set password
 echo "root:op" | chpasswd
-echo "momo:op" | chpasswd
+echo "lain:op" | chpasswd
 
 # SHH
 echo "PubkeyAuthentication yes" | tee -a /etc/ssh/sshd_config
@@ -91,7 +77,7 @@ echo "正在安装 Docker 和相关工具..."
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # 给 momo 用户执行 docker 权限
-usermod -aG docker momo
+usermod -aG docker lain
 
 # 配置 Docker 镜像加速器
 echo "正在配置 Docker 镜像加速器..."
