@@ -15,12 +15,14 @@ linters:
     - ineffassign
     - staticcheck
     - unused
+    - forbidigo # forbids identifiers
  
     # extras:
     - nolintlint # lints nolint directives
     - modernize
     - revive
     - errorlint
+    - nilerr # finds the code that returns nil even if it checks that the error is not nil
     # Modern-Go idioms the code already follows, so they stay followed.
     - intrange
     - usestdlibvars
@@ -30,6 +32,7 @@ linters:
     - thelper
     - asasalint
     # Cheap correctness rules that cost nothing to keep clean.
+    - iotamixing # checks if iotas are being used in const blocks with other non-iota declarations
     - copyloopvar
     - durationcheck
     - makezero
@@ -37,6 +40,8 @@ linters:
     - wastedassign
     # others
     - exhaustive # checks exhaustiveness of enum switch statements
+    - fatcontext # detects nested contexts in loops
+    - noctx # finds sending http request without context.Context
     # Reads as style but catches real slips in a codebase this comment-heavy: a duplicate word.
     - dupword
 
@@ -45,15 +50,15 @@ linters:
     nolintlint:
       # Exclude following linters from requiring an explanation.
       # Default: []
-      allow-no-explanation: [ golines ]
+      allow-no-explanation: []
       require-explanation: true
       require-specific: true
     # skip file or lint or pattern
     exclusions:
       presets:
         - comments
-        - std-error-handling
         - common-false-positives
+        #- std-error-handling
       generated: lax
       rules:
         # Unused parameters are common and acceptable in test and callback
@@ -92,7 +97,7 @@ linters:
           # Default: false
           strict: true
 
-    errcheck:
+    errcheck: # in dev, disable std-error-handling to check
       exclude-functions:
         # These methods can not fail.
         - (*go.uber.org/zap/buffer.Buffer).Write
