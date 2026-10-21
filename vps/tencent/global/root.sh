@@ -19,25 +19,22 @@ apt-get update && apt-get install git wget curl -y
 # install 
 apt-get update && apt-get install sudo wget curl neovim git btop zsh rsync jq p7zip-full -y
 
-# add user momo proxy jumper
-adduser --disabled-password --gecos "" momo
+# add user
 adduser --disabled-password --gecos "" lain
 adduser --disabled-password --gecos "" jumper
 
 # 给 root 权限
-usermod -aG sudo momo
+usermod -aG sudo lain
 echo "%sudo   ALL=(ALL:ALL) ALL" | tee -a /etc/sudoers
 
 # set passwd
 echo "root:op" | chpasswd
-echo "momo:op" | chpasswd
-
-# podman
-apt-get -y install podman
+echo "lain:op" | chpasswd
 
 # Docker
 curl -o get-docker.sh https://get.docker.com 
 sh ./get-docker.sh
+rm ./get-docker.sh
 
 ## 给 momo 用户执行 docker 权限
-usermod -aG docker momo
+usermod -aG docker lain
