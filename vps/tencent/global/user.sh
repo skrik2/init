@@ -93,7 +93,7 @@ download_file "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/in
 chmod +x ohmyzsh_install.sh
 
 # nvm
-download_file "https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh" "nvm_install.sh"
+download_file "https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh" "nvm_install.sh"
 chmod +x nvm_install.sh
 
 # restore.sh
